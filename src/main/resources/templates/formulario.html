@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Formulario</title></head>
+<body>
+<h1>Formulario de Movimiento</h1>
+<form th:action="@{/movimientos}" th:object="${movimiento}" method="post">
+    <label>Tipo:</label><input type="text" th:field="*{tipo}" /><br/>
+    <label>Descripción:</label><input type="text" th:field="*{descripcion}" /><br/>
+    <label>Monto:</label><input type="number" th:field="*{monto}" /><br/>
+    <label>Fecha:</label><input type="date" th:field="*{fecha}" /><br/>
+    <button type="submit">Guardar</button>
+</form>
+</body>
+</html>

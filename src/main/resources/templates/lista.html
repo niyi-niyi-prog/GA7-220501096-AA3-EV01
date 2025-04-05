@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Movimientos</title></head>
+<body>
+<h1>Lista de Movimientos</h1>
+<table border="1">
+    <tr>
+        <th>Tipo</th>
+        <th>Descripción</th>
+        <th>Monto</th>
+        <th>Fecha</th>
+    </tr>
+    <tr th:each="mov : ${movimientos}">
+        <td th:text="${mov.tipo}"></td>
+        <td th:text="${mov.descripcion}"></td>
+        <td th:text="${mov.monto}"></td>
+        <td th:text="${mov.fecha}"></td>
+    </tr>
+</table>
+<a href="/movimientos/formulario">Agregar nuevo movimiento</a>
+</body>
+</html>
