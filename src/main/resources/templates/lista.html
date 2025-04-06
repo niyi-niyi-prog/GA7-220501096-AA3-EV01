@@ -1,22 +1,76 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Movimientos</title></head>
+<head>
+    <title>Movimientos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto 30px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        a {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
 <body>
-<h1>Lista de Movimientos</h1>
-<table border="1">
-    <tr>
-        <th>Tipo</th>
-        <th>Descripción</th>
-        <th>Monto</th>
-        <th>Fecha</th>
-    </tr>
-    <tr th:each="mov : ${movimientos}">
-        <td th:text="${mov.tipo}"></td>
-        <td th:text="${mov.descripcion}"></td>
-        <td th:text="${mov.monto}"></td>
-        <td th:text="${mov.fecha}"></td>
-    </tr>
-</table>
-<a href="/movimientos/formulario">Agregar nuevo movimiento</a>
+    <h1>Lista de Movimientos</h1>
+    <table border="1">
+        <tr>
+            <th>Tipo</th>
+            <th>Descripción</th>
+            <th>Monto</th>
+            <th>Fecha</th>
+        </tr>
+        <tr th:each="mov : ${movimientos}">
+            <td th:text="${mov.tipo}"></td>
+            <td th:text="${mov.descripcion}"></td>
+            <td th:text="${mov.monto}"></td>
+            <td th:text="${mov.fecha}"></td>
+        </tr>
+    </table>
+    <a href="/movimientos/formulario">Agregar nuevo movimiento</a>
 </body>
 </html>
